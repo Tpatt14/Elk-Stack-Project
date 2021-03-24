@@ -4,7 +4,8 @@ Elk stack and Diagrams
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram] Network_Diagram_elkstack.png
+![image](https://user-images.githubusercontent.com/75773558/112246456-ae892e00-8c20-11eb-8e78-d1b354c8ecfe.png)
+ 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
