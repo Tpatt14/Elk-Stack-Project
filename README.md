@@ -13,7 +13,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - [YML_Playbooks](/YML_Playbooks/)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -32,9 +32,9 @@ Load balancing ensures that the application will be highly Available, in additio
 - A jump box is "hidden" to the public and can only be accessed by the administrator, it allows the adminitstrator to perform taks on the other machines.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- Filebeat monitors log files or lactions specified,collects logs events, and forwards them to Elasticsearch or Logstash for indexing.
- 
-- Metricbeats records metrics and statistics then sends them to the outpt chosen, the outputs that can be chosen are Elasticsearch or Logstash
+- Filebeat monitors log files or lactions specified,collects logs events, and forwards them to Elasticsearch or Logstash for indexing. LOgs can then be viewed in Kibana for easy interpretation. 
+
+- Metricbeats records system metrics and statistics then sends them to the output chosen, the outputs are Elasticsearch or Logstash. these records can then be viewed in Kibana for easy interpretation.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -67,12 +67,15 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-The main advantages of automating cofigurations with Ansible are, Speed and accurracy.  
+Automating configuration with Ansible is advantageous because it minimalizes mistakes, and finishes tasks in a timely mannner.  
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install Docker.io
+- Install pyhton3-pip
+- Install Docker module
+- Increase virtual memory for machines on the network
+- Download and launch a docker elk container
+- Enable service Docker when the webservers are booted up  
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -80,13 +83,15 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Web-1 10.0.0.5
+- Web-2 10.0.0.6
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- I successfuly installed Filebeat and Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat: Detects changes to the filesystem, Filebeat is being used to monitor Web Log Data.
+- Metricbeat: Detects chnages in the systems metrics, such as system CPU. Metricbeats allows us to to detect SSH logins, 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
