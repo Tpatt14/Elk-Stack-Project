@@ -27,7 +27,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly Available, in addition to restricting inbound traffic to the network.
 
-- a load balancer defends an organization against distributed (DDoS) attacks, it shifts attack traffic from the corporate server to a public cloud provider.
+- a Load balancer defends an organization against distributed (DDoS) attacks, it shifts attack traffic from the corporate server to a public cloud provider.
  
 - A jump box is "hidden" to the public and can only be accessed by the administrator, it allows the adminitstrator to perform taks on the other machines.
 
@@ -37,7 +37,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Metricbeats records system metrics and statistics then sends them to the output chosen, the outputs are Elasticsearch or Logstash. These records can then be viewed in Kibana for easy interpretation.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name    | Function   | IP Address | Operating System     |
 |---------|------------|------------|----------------------|
@@ -58,17 +57,18 @@ Machines within the network can only be accessed by other machines within the ne
 
 A summary of the access policies in place can be found in the table below.
 
-| Name    | Publicly Accessible  | Allowed IP Addresses      |
-|---------|----------------------|---------------------------|
-| Jump Box| No                   | Administrators IP Address |
-| Web-1   | No                   | 10.0.0.8                  |
-| Web-2   | No                   | 10.0.0.8                  |
-| Elk-P1  | No                   | 10.0.0.8                  |
+| Name    | Publicly Accessible  | Allowed IP Addresses                    |
+|---------|----------------------|-----------------------------------------|
+| Jumpbox | Yes                  | Administrator's IP Address              |
+| Web-1   | No                   | 10.0.0.8                                |
+| Web-2   | No                   | 10.0.0.8                                |
+| Elk-P1  | No                   | 10.0.0.8 and Administrator's IP Address |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-Automating configuration with Ansible is advantageous because it minimalizes mistakes, and finishes tasks in a timely mannner.  
+
+-Automating configuration with Ansible is advantageous because it minimalizes mistakes, and completes tasks in a timely mannner.  
 
 The playbook implements the following tasks:
 - Install Docker.io
@@ -99,8 +99,8 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the YAML files to /etc/Ansible .
+- Update the configuration file to include the ELK server's IP address, change Host name to the name of the ELK server's IP:5601 (Line 1806), and change Host name to the IP address of the ELK server:9200 (Line 1106). 
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
