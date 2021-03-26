@@ -103,9 +103,15 @@ SSH into the control node and follow the steps below:
 - Update the configuration file to include the ELK server's IP address, change Host name to the name of the ELK server's IP:5601 (Line 1806), and change Host name to the IP address of the ELK server:9200 (Line 1106). 
 - Run the playbook, and navigate to Kibana (Elk Public IP:5601/app/kibana) to make sure the installaton was successful. 
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+
+ssh azadmin@(JumpBox PrivateIP)
+sudo docker container list -a (to locate container)
+sudo docker start container (name of the container)
+sudo docker attach container (name of the container)
+cd /etc/ansible/ (path to directory where playbook sare located)
+ansible-playbook elk.yml (configures Elk-Server and starts the Elk container on the Elk-Server)
+cd /etc/ansible/files
+ansible-playbook filebeat-playbook.yml (install Filebeat and Metricbeat)
+open a new web browser (Elk-Server PublicIP:5601) This will bring up the Kibana Web Portal
