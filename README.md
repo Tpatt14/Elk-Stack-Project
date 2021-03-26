@@ -4,7 +4,7 @@ Elk stack and Diagrams
 
 The files in this repository were used to configure the network depicted below.
 
-![image]()
+![image](/Images/Diagram_elkstack.png)
 
  
 
