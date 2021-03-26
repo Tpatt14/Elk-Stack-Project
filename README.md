@@ -4,7 +4,7 @@ Elk stack and Diagrams
 
 The files in this repository were used to configure the network depicted below.
 
-![image](/Images/Diagram_elkstack.png)
+[image](/Images/Diagram_elkstack.png)
 
  
 
@@ -31,10 +31,10 @@ Load balancing ensures that the application will be highly Available, in additio
  
 - A jump box is "hidden" to the public and can only be accessed by the administrator, it allows the adminitstrator to perform taks on the other machines.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- Filebeat monitors log files or lactions specified,collects logs events, and forwards them to Elasticsearch or Logstash for indexing. LOgs can then be viewed in Kibana for easy interpretation. 
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
+- Filebeat monitors log files or lactions specified,collects logs events, and forwards them to Elasticsearch or Logstash for indexing. Logs can then be viewed in Kibana for easy interpretation. 
 
-- Metricbeats records system metrics and statistics then sends them to the output chosen, the outputs are Elasticsearch or Logstash. these records can then be viewed in Kibana for easy interpretation.
+- Metricbeats records system metrics and statistics then sends them to the output chosen, the outputs are Elasticsearch or Logstash. These records can then be viewed in Kibana for easy interpretation.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -54,15 +54,16 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 - The whitelisted IP addresses are, the administartors personal IP Address.
 
 Machines within the network can only be accessed by other machines within the netowrk.
-- The Jump Box was allowed to access the ELK VM, the IP address of the Jump Box is 10.0.0.8 
+- The Jump Box was allowed to access the ELK VM, the IP address of the Jump Box is 10.0.0.8. 
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name    | Publicly Accessible  | Allowed IP Addresses      |
+|---------|----------------------|---------------------------|
+| Jumpbox | Yes                  | Administrators IP Address |
+| Web-1   | No                   | 10.0.0.8                  |
+| Web-2   | No                   | 10.0.0.8                  |
+| Elk-P1  | No                   | 10.0.0.8                  |
 
 ### Elk Configuration
 
@@ -91,7 +92,8 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat: Detects changes to the filesystem, Filebeat is being used to monitor Web Log Data.
-- Metricbeat: Detects chnages in the systems metrics, such as system CPU. Metricbeats allows us to to detect SSH logins, 
+
+- Metricbeat: Detects changes in the systems metrics, such as system CPU. Metricbeats allows us to monitor uptime, CPU/Memory, and other data related services running on the servers. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
