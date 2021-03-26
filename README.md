@@ -107,11 +107,19 @@ SSH into the control node and follow the steps below:
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
 -ssh azadmin@(JumpBox PrivateIP)
+
 -sudo docker container list -a (to locate container)
+
 -sudo docker start container (name of the container)
+
 -sudo docker attach container (name of the container)
+
 -cd /etc/ansible/ (path to directory where playbook sare located)
+
 -ansible-playbook elk.yml (configures Elk-Server and starts the Elk container on the Elk-Server)
+
 -cd /etc/ansible/files
+
 -ansible-playbook filebeat-playbook.yml (install Filebeat and Metricbeat)
+
 -open a new web browser (Elk-Server PublicIP:5601) This will bring up the Kibana Web Portal
