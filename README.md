@@ -123,3 +123,9 @@ SSH into the control node and follow the steps below:
 -ansible-playbook filebeat-playbook.yml (install Filebeat and Metricbeat)
 
 -open a new web browser (Elk-Server PublicIP:5601) This will bring up the Kibana Web Portal
+
+The commands to run each playbook:
+- ansible-playbook install-elk.yml
+- ansible-playbook docker-playbook.yml
+- ansible-playbook filebeat-playbook.yml
+- ansible-playbook metricbeat-playbook.yml 
