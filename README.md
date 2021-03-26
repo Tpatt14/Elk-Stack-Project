@@ -8,7 +8,7 @@ The files in this repository were used to configure the network depicted below.
 
  
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
 [YML_Playbooks](/YML_Playbook/)
 
@@ -60,7 +60,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name    | Publicly Accessible  | Allowed IP Addresses      |
 |---------|----------------------|---------------------------|
-| Jumpbox | Yes                  | Administrators IP Address |
+| Jump Box| No                   | Administrators IP Address |
 | Web-1   | No                   | 10.0.0.8                  |
 | Web-2   | No                   | 10.0.0.8                  |
 | Elk-P1  | No                   | 10.0.0.8                  |
