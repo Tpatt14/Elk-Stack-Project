@@ -100,7 +100,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the YAML files to /etc/Ansible .
-- Update the configuration file to include the ELK server's IP address, change Host name to the name of the ELK server's IP:5601 (Line 1806), and change Host name to the IP address of the ELK server:9200 (Line 1106). 
+- Update the configuration file to include the ELK server's IP address, change Host name to the name of the ELK server's IP:5601 (using the command (Ctrl+W) navigate to line 1806), and change Host name to the IP address of the ELK server:9200 (using the command (Crtl+W) nvugate to line 1106). 
 - Run the playbook, and navigate to Kibana (Elk Public IP:5601/app/kibana) to make sure the installaton was successful. 
 
 
