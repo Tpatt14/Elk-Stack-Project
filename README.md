@@ -100,11 +100,12 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the YAML files to /etc/Ansible .
-- Update the configuration file to include the ELK server's IP address, change Host name to the name of the ELK server's IP:5601 (using the command (Ctrl+W) navigate to line 1806), and change Host name to the IP address of the ELK server:9200 (using the command (Crtl+W) nvugate to line 1106). 
+- Update the configuration file to include the ELK server's IP address, change Host name to the name of the ELK server's IP:5601 (using the command (Ctrl+W) navigate to line 1806), and change Host name to the IP address of the ELK server:9200 (using the command (Crtl+W) navigate to line 1106). These steps listed are for Filebeat. To navigate through Metricbeat you can you the same command (Crtl+W) combined with key words to find where corrections need to be made within the file. 
+
 - Run the playbook, and navigate to Kibana (Elk Public IP:5601/app/kibana) to make sure the installaton was successful. 
 
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+-the specific commands the user will need to run to download the playbook, update the files, etc._
 
 -ssh azadmin@(JumpBox PrivateIP)
 
