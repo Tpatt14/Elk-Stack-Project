@@ -116,13 +116,13 @@ SSH into the control node and follow the steps below:
 
 -sudo docker attach container (name of the container)
 
--cd /etc/ansible/ (path to directory where playbook sare located)
+-cd /etc/ansible/ (path to directory where playbooks are located)
 
 -ansible-playbook elk.yml (configures Elk-Server and starts the Elk container on the Elk-Server)
 
 -cd /etc/ansible/files
 
--ansible-playbook filebeat-playbook.yml (install Filebeat and Metricbeat)
+-ansible-playbook filebeat-playbook.yml (runs the filebeat playbook, same command can be used for metricbeat playbook)
 
 -open a new web browser (Elk-Server PublicIP:5601) This will bring up the Kibana Web Portal
 
