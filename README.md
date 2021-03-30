@@ -68,7 +68,7 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because
 
-automating configuration with Ansible is advantageous because it minimalizes mistakes, and completes tasks in a timely mannner.  
+minimalizes mistakes and completes tasks in a timely mannner.  
 
 The playbook implements the following tasks:
 [YML_Playbook](/YML_Playbook/install-elk.yml)
