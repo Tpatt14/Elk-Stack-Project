@@ -128,4 +128,4 @@ The commands to run each playbook:
 - ansible-playbook install-elk.yml
 - ansible-playbook docker-playbook.yml
 - ansible-playbook filebeat-playbook.yml
-- ansible-playbook metricbeat-playbook.yml
+- ansible-playbook metricbeat-playbook.yml 
