@@ -25,16 +25,16 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly Available, in addition to restricting inbound traffic to the network.
+Load balancing ensures that the application will be highly available, in addition to restricting inbound traffic to the network.
 
-- a Load balancer defends an organization against distributed (DDoS) attacks, it shifts attack traffic from the corporate server to a public cloud provider.
+- A load balancer, balances incoming traffic between all of the devices you've configured them too, so no one device gets overwhelmed.
  
-- A jump box is "hidden" to the public and can only be accessed by the administrator, it allows the adminitstrator to perform taks on the other machines.
+- A jump box is "hidden" to the public and can only be accessed by the administrator, it allows the administrator to perform tasks on the other machines.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
-- Filebeat monitors log files or lactions specified,collects logs events, and forwards them to Elasticsearch or Logstash for indexing. Logs can then be viewed in Kibana for easy interpretation. 
+- Filebeat monitors log files or actions specified ,collects logs events, and forwards them to Elasticsearch or Logstash for indexing. Logs can then be viewed in Kibana for easy interpretation. 
 
-- Metricbeats records system metrics and statistics then sends them to the output chosen, the outputs are Elasticsearch or Logstash. These records can then be viewed in Kibana for easy interpretation.
+- Metricbeat records system metrics and statistics then sends them to the outputs, Elasticsearch and Logstash. These records can then be viewed in Kibana for easy interpretation.
 
 The configuration details of each machine may be found below.
 
@@ -49,8 +49,8 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- The whitelisted IP addresses are, the administartors personal IP Address.
+Only the Jump Box machine and ELK server can accept connections from the Internet. Access to these machines, is only allowed from the following IP addresses:
+- The whitelisted IP addresses is the administrators personal IP Address.
 
 Machines within the network can only be accessed by other machines within the netowrk.
 - The Jump Box was allowed to access the ELK VM, the IP address of the Jump Box is 10.0.0.8. 
@@ -66,9 +66,9 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because
 
--Automating configuration with Ansible is advantageous because it minimalizes mistakes, and completes tasks in a timely mannner.  
+automating configuration with Ansible is advantageous because it minimalizes mistakes, and completes tasks in a timely mannner.  
 
 The playbook implements the following tasks:
 [YML_Playbook](/YML_Playbook/install-elk.yml)
@@ -90,7 +90,7 @@ This ELK server is configured to monitor the following machines:
 - Web-2 10.0.0.6
 
 We have installed the following Beats on these machines:
-- I successfuly installed Filebeat and Metricbeat
+-Filebeat and Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat: Detects changes to the filesystem, Filebeat is being used to monitor Web Log Data.
@@ -105,8 +105,6 @@ SSH into the control node and follow the steps below:
 - Update the configuration file to include the ELK server's IP address, change Host name to the name of the ELK server's IP:5601 (using the command (Ctrl+W) navigate to line 1806), and change Host name to the IP address of the ELK server:9200 (using the command (Crtl+W) navigate to line 1106). These steps listed are for Filebeat. To navigate through Metricbeat you can you the same command (Crtl+W) combined with key words (ouput.elsticsearch) and (setup.kibana) to find where corrections need to be made within the file. 
 
 - Run the playbook, and navigate to Kibana (Elk Public IP:5601/app/kibana) to make sure the installaton was successful. 
-
--the specific commands the user will need to run to download the playbook, update the files, etc._
 
 -ssh azadmin@(JumpBox PrivateIP)
 
